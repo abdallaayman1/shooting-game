@@ -203,7 +203,8 @@ is_paused = False
 def draw_pause_screen():
     font = pygame.font.SysFont("comicsans", 70, True)
     text = font.render("Paused", True, RED)
-    screen.blit(text, (889 // 3, 500 // 5))  # Display the 'Paused' message
+    screen.blit(text, (889 // 3, 500 // 5))  
+    pygame.display.update() # Display the 'Paused' message
     
     
 
@@ -252,9 +253,8 @@ while True:
                             )
                         )
                 elif event.key == pygame.K_p:  
-                    if Enemy.visible:
-                        # Press 'P' to pause the game
-                        is_paused = True  # Toggle pause state
+                    # Press 'P' to pause the game
+                    is_paused = True  # Toggle pause state
                 elif event.key == pygame.K_q:  # Press 'Q' to quit the game
                     pygame.quit()
                     quit()
